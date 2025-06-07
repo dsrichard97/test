@@ -1,0 +1,125 @@
+/* ======================== GLOBAL RESET + VARIABLES ======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #0d0d0d;        /* Very dark background */
+  --text-color: #ffffff;      /* White text */
+  --accent-color: #1f78ff;    /* Bright blue for tags & hover states */
+  --tag-bg: #1f78ff;          /* Tag background */
+  --tag-text: #ffffff;        /* Tag text color */
+  --link-hover: #ff8c00;      /* Orange-ish on click/hover */
+  --transition-speed: 0.2s;
+  --max-content-width: 800px; /* Limits paragraph width */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =================== HEADER & NAVIGATION =================== */
+.site-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  z-index: 10;
+  padding: 1rem 2rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation links on the left */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+
+/* Hover = bright blue; Active = orange */
+.nav-item:hover {
+  color: var(--accent-color);
+}
+.nav-item:active {
+  color: var(--link-hover);
+}
+
+/* Settings icon on the right */
+.settings-link {
+  display: inline-block;
+}
+
+.settings-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  /* Make sure your SVG paths use fill="currentColor" */
+  fill: currentColor;
+  transition: fill var(--transition-speed);
+}
+
+/* Hover/Active for Vader helmet */
+.settings-link:hover .settings-icon {
+  /* tint to accent-color */
+  fill: var(--accent-color);
+}
+.settings-link:active .settings-icon {
+  /* tint to link-hover */
+  fill: var(--link-hover);
+}
+
+/* =================== MAIN CONTENT =================== */
+.main-content {
+  /* Push down to avoid overlapping fixed header */
+  padding-top: 6rem;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Logo / Avatar */
+.logo-container {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.logo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+}
+
+/* Name / Title */
+.name {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  transition: opacity var(--transition-speed);
+}
+
+/
